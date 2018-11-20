@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_btn_unpass_yello" android:state_pressed="false" />
+    <item android:drawable="@drawable/bg_btn_passed_yellow" android:state_pressed="true" />
+    <item android:drawable="@drawable/bg_btn_unpass_yello" android:state_focused="true" />
+
+</selector>
