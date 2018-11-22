@@ -8,7 +8,7 @@ apply plugin: 'com.aliyun.ams.emas-services'
 
 android {
     compileSdkVersion 28 //编译工程的SDK版本
-    buildToolsVersion '28.0.3'//构建工具的版本
+//    buildToolsVersion '28.0.3'//构建工具的版本
     useLibrary 'org.apache.http.legacy'//optional可选库需要次方法来加载到classpath中
     //默认配置
     defaultConfig {
@@ -152,22 +152,11 @@ android {
         warningsAsErrors false   //是否把警告也当作错误处理 默认为false
         absolutePaths true //配置错误的输出力是否显示绝对路径 默认为true
         check 'NewApi', 'InlinedApi'  //检查是否使用了新的api 多个使用下方的集合
-
-
     }
     //融云兼容代码
 //    aaptOptions {
 //        additionalParameters "--no-version-vectors"
 //    }
-    packagingOptions {
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude 'META-INF/notice.txt'
-    }
 
 
 }
@@ -194,6 +183,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //引用其他module
     implementation project(':firstlabrary')
@@ -211,8 +201,13 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    //MultipleStatusView
+    implementation 'com.classic.common:multiple-status-view:1.5.1'
+    //AnKo
+    implementation "org.jetbrains.anko:anko-sdk15:0.10.7"
     implementation project(':IMLib')
     implementation project(':IMKit')
+
 }
 repositories {
     mavenCentral()

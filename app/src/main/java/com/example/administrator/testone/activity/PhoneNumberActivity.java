@@ -1,4 +1,5 @@
 package com.example.administrator.testone.activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.provider.ContactsContract;
@@ -10,7 +11,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.example.administrator.testone.R;
 import com.example.administrator.testone.adapter.PhoneNumberAdapter;
 import com.example.administrator.testone.adapter.PhoneNumberRecycleViewAdapter;
@@ -22,9 +26,14 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+
+import org.jetbrains.anko.ToastsKt;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import io.reactivex.internal.operators.observable.BlockingObservableNext;
 
 public class PhoneNumberActivity extends BaseActivity {
     private ListView lv_phone;
@@ -35,7 +44,7 @@ public class PhoneNumberActivity extends BaseActivity {
 
 
 
-    private int flag=2;//1.ListView 2.RecycleView
+    private int flag=1;//1.ListView 2.RecycleView
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +61,23 @@ public class PhoneNumberActivity extends BaseActivity {
 
             }
         });
+        lv_phone.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(PhoneNumberActivity.this,HomeActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putBoolean("aaa",true);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                finish();
+
+
+            }
+        });
 
     }
+
+
 
 
 

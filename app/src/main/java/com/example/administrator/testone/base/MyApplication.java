@@ -1,5 +1,7 @@
 package com.example.administrator.testone.base;
 
+import android.app.Application;
+import android.content.Context;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
@@ -9,6 +11,7 @@ import com.taobao.sophix.listener.PatchLoadStatusListener;
 import io.rong.imkit.RongIM;
 
 public class MyApplication extends MultiDexApplication {
+    private static Context context;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -16,6 +19,12 @@ public class MyApplication extends MultiDexApplication {
         SophixManager.getInstance().queryAndLoadNewPatch();
         Log.d("日志", "初始化融云");
         RongIM.init(this);//初始化融云
+        context=this;
 
     }
+    public static Context getContext(){
+        return context;
+    }
+
+
 }

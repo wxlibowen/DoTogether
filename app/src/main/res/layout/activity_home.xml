@@ -52,13 +52,38 @@
                     android:background="@drawable/bg_button_orange"
                     android:text="闪屏页"/>
                 <Button
+
                     android:layout_marginLeft="20dp"
-                    android:id="@+id/btn_whit"
+                    android:id="@+id/btn_multiple"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button_orange"
-                    android:text="" />
+                    android:text="Multiple" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_fragment"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="Fragment"/>
+                <Button
+
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/_null"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text=" " />
             </LinearLayout>
 
         </LinearLayout>

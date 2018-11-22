@@ -1,61 +1,49 @@
 package com.example.administrator.testone.util;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 import com.example.administrator.testone.base.MyApplication;
 
+/**
+ * 工具合集
+ */
 public class Util {
     private static Context context;
-    private static void getContext(){
-//        if (context==null){
-//            context=MyApplication.getContext();
-//        }
+    private static String spName = "testOneSP";
+
+    private static void getContext() {
+        if (context == null) {
+            context = MyApplication.getContext();
+        }
 
     }
 
 
     /**
      * 获取当前app版本号
+     *
      * @return
      * @throws PackageManager.NameNotFoundException
      */
     public static int getVersionCode() throws PackageManager.NameNotFoundException {
         getContext();
-        PackageManager manager=context.getPackageManager();
-        PackageInfo info=manager.getPackageInfo(context.getPackageName(),0);
-        return  info.versionCode;
+        PackageManager manager = context.getPackageManager();
+        PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
+        return info.versionCode;
     }
 
-    public static String getToken(){
-//        String appKey = "ik1qhw09ip9jp";
-//        String appSecret = "ZgtalBISU0NH";
-//
-//        RongCloud rongCloud = RongCloud.getInstance(appKey, appSecret);
-//        User User = rongCloud.user;
-//
-//        /**
-//         * API 文档: http://www.rongcloud.cn/docs/server_sdk_api/user/user.html#register
-//         *
-//         * 注册用户，生成用户在融云的唯一身份标识 Token
-//         */
-//        UserModel user = new UserModel()
-//                .setId("hHjap87")
-//                .setName("RongCloud")
-//                .setPortrait("http://www.rongcloud.cn/images/logo.png");
-//        TokenResult result = null;
-//        try {
-//            result = User.register(user);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return result.toString();
-        return "";
+    public static void putString(String key, String value) {
+        SharedPreferences sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE);
+        sp.edit().putString(key, value).commit();
     }
 
-
-
+    public static String getString(String key) {
+        SharedPreferences sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE);
+        return sp.getString(key, "");
+    }
 
 
 }

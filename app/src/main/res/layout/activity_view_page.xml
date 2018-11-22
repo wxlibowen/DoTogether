@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.ViewPageActivity">
+    <!--用来展示闪屏页-->
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_photo"
         android:layout_width="match_parent"
@@ -14,40 +14,44 @@
 
 
     </android.support.v4.view.ViewPager>
+    <!--用来展示当前页面小圆点-->
     <LinearLayout
-        android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
         <ImageView
             android:id="@+id/iv_zero"
-            android:src="@drawable/guide_point_sel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_point_sel" />
+
         <ImageView
-            android:layout_marginHorizontal="3dp"
             android:id="@+id/iv_one"
-            android:src="@drawable/guide_point_nor"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:src="@drawable/guide_point_nor" />
+
         <ImageView
             android:id="@+id/iv_two"
-            android:src="@drawable/guide_point_nor"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_point_nor" />
+
         <ImageView
-            android:layout_marginHorizontal="3dp"
             android:id="@+id/iv_three"
-            android:src="@drawable/guide_point_nor"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:src="@drawable/guide_point_nor" />
+
         <ImageView
             android:id="@+id/iv_four"
-            android:src="@drawable/guide_point_nor"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_point_nor" />
     </LinearLayout>
-
-
 </RelativeLayout>

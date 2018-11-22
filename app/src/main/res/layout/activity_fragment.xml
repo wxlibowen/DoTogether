@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TestActivity2">
-<TextView
-    android:text="秀啊钩子"
-    android:id="@+id/tv_one"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    tools:context=".activity.FragmentActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home_fragment"
+
+        />
 </android.support.constraint.ConstraintLayout>
