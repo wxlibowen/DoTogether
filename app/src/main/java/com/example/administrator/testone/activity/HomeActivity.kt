@@ -26,6 +26,7 @@ class HomeActivity : BaseActivity() {
         if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this@HomeActivity, Manifest.permission.CALL_PHONE)) {
             ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.CALL_PHONE), 3)
         }
+        startActivity<DiyView>()
     }
 
     private fun jump() {
