@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.administrator.testone.util.L;
+import com.example.administrator.testone.util.LL;
 import com.example.administrator.testone.R;
 
 /**
@@ -258,7 +258,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     //运算符
     private void countMark(View v) {
         currentFlag = v.getTag().toString();
-        L.d("当前运算符为:" + currentFlag);
+        LL.d("当前运算符为:" + currentFlag);
 
         String one = String.valueOf(sb.charAt(sb.length() - 1));
 
@@ -287,7 +287,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void add(View v) {
-        L.d(v.getTag().toString());
+        LL.d(v.getTag().toString());
         //当第一位是0的时候按0只显示一个0
         if (v.getTag().toString().equals("0") && sb.length() < 1) {
             tv.setText("0");

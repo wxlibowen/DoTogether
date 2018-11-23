@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.administrator.testone.R;
 
+
 /**
  * 创建时间:2018/11/19
  * 作者:LiBW
@@ -18,6 +19,8 @@ import com.example.administrator.testone.R;
  */
 public class MyShanPing extends RelativeLayout {
     private ImageView rl;//背景图
+    private ImageView bg_image;//背景图
+
     private TextView tv_one;//第一行文字
     private TextView tv_two;//第二行文字
 
@@ -33,30 +36,39 @@ public class MyShanPing extends RelativeLayout {
         rl = view.findViewById(R.id.rl_background);
         tv_one = view.findViewById(R.id.tv_one);
         tv_two = view.findViewById(R.id.tv_two);
+        bg_image = view.findViewById(R.id.bg_image);
         //根据不同页面展示不同数据
         switch (position) {
             case 0:
-                setData(R.drawable.guide_img__one, "喵喵机4.0", "全新设计,极致体验");
+                setData(R.drawable.guide_img_one, R.drawable.guide_bg_one,"喵喵机4.0", "全新设计,极致体验");
                 break;
             case 1:
-                setData(R.drawable.guide_img_two, "丰富错题打印功能", "拍题优化,更快更准");
+                setData(R.drawable.guide_img_two, R.drawable.guide_bg_two,"丰富错题打印功能", "拍题优化,更快更准");
                 break;
             case 2:
-                setData(R.drawable.guide_img_three, "广场社区全新升级", "优质内容推荐,使用技巧分享");
+                setData(R.drawable.guide_img_three,R.drawable.guide_bg_three, "广场社区全新升级", "优质内容推荐,使用技巧分享");
                 break;
             case 3:
-                setData(R.drawable.guide_img__four, "第四页第一行", "第四页第二行");
+                setData(R.drawable.guide_img_five, R.drawable.guide_bg_four,"第四页第一行", "第四页第二行");
                 break;
             case 4:
-                setData(R.drawable.guide_img_five, "第五页第一行", "第五页第二行");
+                setData(R.drawable.guide_img_five, R.drawable.guide_bg_five,"第五页第一行", "第五页第二行");
                 break;
         }
     }
 
-    private void setData(int image, String one, String two) {
-        Drawable drawable = getResources().getDrawable(image);
+    private void setData(int preImage,int lastImage, String one, String two) {
+
+        Drawable drawable = getResources().getDrawable(preImage);
         rl.setImageDrawable(drawable);
+        drawable=getResources().getDrawable(lastImage);
+        bg_image.setImageDrawable(drawable);
+
         tv_one.setText(one);
         tv_two.setText(two);
+
+
+
+
     }
 }

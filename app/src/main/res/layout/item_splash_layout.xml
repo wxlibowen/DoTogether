@@ -5,10 +5,20 @@
     android:orientation="vertical">
     <!--用来展示整体的背景图-->
     <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:src="@drawable/guide_bg_one" />
+
+    <ImageView
         android:id="@+id/rl_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:adjustViewBounds="true" />
+
+
     <!--第二行文字-->
     <TextView
         android:id="@+id/tv_two"
@@ -28,6 +38,7 @@
         android:textSize="25sp">
 
         <FrameLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 

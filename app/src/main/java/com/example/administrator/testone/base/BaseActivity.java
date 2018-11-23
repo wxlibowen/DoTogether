@@ -16,6 +16,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
         changStatusIconCollor(true);
+        ActivityCollector.addActivity(this);
 
 
 
