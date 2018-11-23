@@ -5,9 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.administrator.testone.R;
+import com.example.administrator.testone.base.BaseActivity;
 import com.example.administrator.testone.view.Clock;
 
-public class DiyView extends AppCompatActivity {
+public class DiyView extends BaseActivity {
     private Clock clock;
     private Handler handler=new Handler();
     private Runnable runnable=new Runnable() {
