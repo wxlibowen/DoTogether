@@ -8,6 +8,7 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.Printer;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,6 +26,7 @@ import java.util.Date;
  */
 public class Clock extends View {
     private int viewWidth;//控件尺寸
+
     public Clock(Context context) {
         this(context,null);
     }
@@ -36,6 +38,7 @@ public class Clock extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         Paint paint=new Paint();//画笔
         paint.setAntiAlias(true);//抗锯齿
         paint.setTextSize(viewWidth/20);//设置字体大小
@@ -51,28 +54,30 @@ public class Clock extends View {
         paint.setColor(Color.BLACK);
         //绘制大刻度线
         for (int i=0;i<12;i++){
+            //12个大刻度线每个旋转30度
             drawKeDu(i*30,paint,canvas,true);
         }
         //绘制小刻度线
         paint.setStrokeWidth(viewWidth/80);
         for (int i=0;i<60;i++){
+            //60个小刻度每个旋转6度 整点的小刻度会和大刻度重合
             drawKeDu(i*6,paint,canvas,false);
         }
         //时间
-        Date date=new Date();
+        Date date=new Date();//获取当前时间
         float hao=Calendar.getInstance().get(Calendar.MILLISECOND);//毫秒
         //秒针
         paint.setColor(Color.RED);
         SimpleDateFormat ssFormat=new SimpleDateFormat("ss");
         String ss=ssFormat.format(date);
-        float s=Float.valueOf(ss)+hao/1000;
+        float s=Float.valueOf(ss)+hao/1000;//当前秒数和毫秒数相加
         canvas.save();
-        canvas.rotate(s*6,viewWidth/2,viewWidth/2);
+        canvas.rotate(s*6,viewWidth/2,viewWidth/2);//每个整秒旋转6度(一共60秒旋转整个360度)
         Path path=new Path();
-        path.moveTo(viewWidth/2,0);
-        path.lineTo(viewWidth/1.95f,viewWidth/1.9f);
-        path.lineTo(viewWidth/2.05f,viewWidth/1.9f);
-        path.close();
+        path.moveTo(viewWidth/2,0);//秒针第一个点
+        path.lineTo(viewWidth/1.95f,viewWidth/1.9f);//秒针第二个点
+        path.lineTo(viewWidth/2.05f,viewWidth/1.9f);//秒针第三个点
+        path.close();//组合表针连接起点和终点
         canvas.drawPath(path,paint);
         canvas.restore();
 
@@ -86,6 +91,7 @@ public class Clock extends View {
         canvas.rotate(f*6,viewWidth/2,viewWidth/2);
         canvas.drawLine(viewWidth/2,viewWidth/2,viewWidth/2,viewWidth/7,paint);
         canvas.restore();
+
         //时针
         SimpleDateFormat SZFormat=new SimpleDateFormat("HH");
         String sz=SZFormat.format(date);
@@ -98,6 +104,8 @@ public class Clock extends View {
         //中间圆点
         paint.setColor(Color.GREEN);
         canvas.drawCircle(viewWidth/2,viewWidth/2,viewWidth/60,paint);
+
+
 
 
 
@@ -130,7 +138,6 @@ public class Clock extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-//        viewHeight=MeasureSpec.getSize(heightMeasureSpec);
         if (widthMeasureSpec>=heightMeasureSpec){
             viewWidth=MeasureSpec.getSize(heightMeasureSpec);
         }else {
