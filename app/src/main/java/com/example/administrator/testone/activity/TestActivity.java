@@ -38,8 +38,10 @@ public class TestActivity extends FragmentActivity {
         TextView tv_2 = findViewById(R.id.tv_2);
         tv_2.setText("BuildConfig中的环境字段:" + Name);
         TextView tv_3 = findViewById(R.id.tv_3);
+        TextView tv_4 = findViewById(R.id.tv_4);
+
         try {
-            tv_3.setText("当前版本号:"+Util.getVersionCode());
+            tv_3.setText("当前版本号:" + Util.getVersionCode());
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -53,9 +55,9 @@ public class TestActivity extends FragmentActivity {
         tv_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(TestActivity.this,TestActivity2.class);
-                Bundle bundle=new Bundle();
-                bundle.putBoolean("aaa",true);
+                Intent intent = new Intent(TestActivity.this, TestActivity2.class);
+                Bundle bundle = new Bundle();
+                bundle.putBoolean("aaa", true);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
@@ -84,7 +86,7 @@ public class TestActivity extends FragmentActivity {
 
             @Override
             public void onError(RongIMClient.ErrorCode errorCode) {
-                Log.d("日志", "错误码 "+errorCode.toString());
+                Log.d("日志", "错误码 " + errorCode.toString());
                 Log.e("日志", "--onError");
             }
         });

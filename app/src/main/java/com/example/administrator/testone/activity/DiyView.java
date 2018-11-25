@@ -15,7 +15,7 @@ public class DiyView extends BaseActivity {
         @Override
         public void run() {
             clock.invalidate();
-            handler.postDelayed(runnable,1000);
+            handler.postDelayed(runnable,10);
 
         }
     };

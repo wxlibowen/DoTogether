@@ -76,14 +76,13 @@
                     android:background="@drawable/bg_button_orange"
                     android:text="Fragment"/>
                 <Button
-
                     android:layout_marginLeft="20dp"
-                    android:id="@+id/_null"
+                    android:id="@+id/btn_clock"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button_orange"
-                    android:text=" " />
+                    android:text="自定义表" />
             </LinearLayout>
 
         </LinearLayout>

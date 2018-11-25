@@ -26,7 +26,7 @@ class HomeActivity : BaseActivity() {
         if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this@HomeActivity, Manifest.permission.CALL_PHONE)) {
             ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.CALL_PHONE), 3)
         }
-        startActivity<DiyView>()
+
     }
 
     private fun jump() {
@@ -42,6 +42,8 @@ class HomeActivity : BaseActivity() {
         btn_multiple.setOnClickListener { GoActivity(MultipleStatusActivity::class.java,false) }
         //fragment
         btn_fragment.setOnClickListener { GoActivity(FragmentActivity::class.java,false) }
+        //自定义钟表View
+        btn_clock.setOnClickListener { startActivity<DiyView>()}
 
 
 

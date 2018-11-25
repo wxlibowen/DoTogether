@@ -12,7 +12,10 @@ import android.util.Printer;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.administrator.testone.R;
+
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -28,16 +31,14 @@ public class Clock extends View {
 
     public Clock(Context context,  AttributeSet attrs) {
         super(context, attrs);
-        WindowManager manager= (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-//        windowWidth=manager.getDefaultDisplay().getWidth();
-//        windowHeight=manager.getDefaultDisplay().getHeight();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Paint paint=new Paint();
-        paint.setAntiAlias(true);
+        Paint paint=new Paint();//画笔
+        paint.setAntiAlias(true);//抗锯齿
+        paint.setTextSize(viewWidth/20);//设置字体大小
 
         //内圆外圆组成了圆环
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -45,11 +46,10 @@ public class Clock extends View {
             paint.setColor(Color.WHITE);
             canvas.drawArc(2,2,viewWidth-2,viewWidth-2,0,360,false,paint);
         }
-        //大刻度线
+        //刻度线
         paint.setStrokeWidth(viewWidth/60);
         paint.setColor(Color.BLACK);
         //绘制大刻度线
-
         for (int i=0;i<12;i++){
             drawKeDu(i*30,paint,canvas,true);
         }
@@ -58,19 +58,16 @@ public class Clock extends View {
         for (int i=0;i<60;i++){
             drawKeDu(i*6,paint,canvas,false);
         }
+        //时间
         Date date=new Date();
-
-
-
+        float hao=Calendar.getInstance().get(Calendar.MILLISECOND);//毫秒
         //秒针
         paint.setColor(Color.RED);
         SimpleDateFormat ssFormat=new SimpleDateFormat("ss");
         String ss=ssFormat.format(date);
-        float s=Float.valueOf(ss);
-
+        float s=Float.valueOf(ss)+hao/1000;
         canvas.save();
         canvas.rotate(s*6,viewWidth/2,viewWidth/2);
-//        canvas.drawLine(viewWidth/2,viewWidth/1.5f,viewWidth/2,viewWidth/18,paint);
         Path path=new Path();
         path.moveTo(viewWidth/2,0);
         path.lineTo(viewWidth/1.95f,viewWidth/1.9f);
@@ -83,7 +80,7 @@ public class Clock extends View {
         paint.setColor(Color.BLACK);
         SimpleDateFormat ffFormat=new SimpleDateFormat("mm");
         String ff=ffFormat.format(date);
-        float f=Float.valueOf(ff);
+        float f=Float.valueOf(ff)+s/60;
         paint.setStrokeWidth(viewWidth/80);
         canvas.save();
         canvas.rotate(f*6,viewWidth/2,viewWidth/2);
@@ -92,18 +89,15 @@ public class Clock extends View {
         //时针
         SimpleDateFormat SZFormat=new SimpleDateFormat("HH");
         String sz=SZFormat.format(date);
-        float z=Float.valueOf(sz);
+        float z=Float.valueOf(sz)+f/12;
         paint.setStrokeWidth(viewWidth/60);
         canvas.save();
         canvas.rotate(z*6,viewWidth/2,viewWidth/2);
         canvas.drawLine(viewWidth/2,viewWidth/2,viewWidth/2,viewWidth/5,paint);
         canvas.restore();
-
+        //中间圆点
         paint.setColor(Color.GREEN);
         canvas.drawCircle(viewWidth/2,viewWidth/2,viewWidth/60,paint);
-
-
-
 
 
 
@@ -114,9 +108,8 @@ public class Clock extends View {
         canvas.save();
         canvas.rotate(angle,viewWidth/2,viewWidth/2);
        if (isBig){
-
            canvas.drawLine(viewWidth/2,0,viewWidth/2,viewWidth/20,paint);
-           paint.setTextSize(viewWidth/20);
+
            int time=(int)(angle/30);
             if (time==0){
                 time=12;
