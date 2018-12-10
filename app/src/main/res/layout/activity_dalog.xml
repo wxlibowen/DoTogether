@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DiyView">
-    <com.example.administrator.testone.view.Clock
-        android:id="@+id/view_clock"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    tools:context=".activity.DialogActivity">
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="弹窗来吧"
         />
-
 </android.support.constraint.ConstraintLayout>

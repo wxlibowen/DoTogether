@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import com.example.administrator.testone.R
 import com.example.administrator.testone.base.BaseActivity
+import com.example.firstlabrary.LoginActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -18,7 +19,7 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
+        startActivity<XYzhouActivity>()
         jump()
         if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this@HomeActivity, Manifest.permission.READ_CONTACTS)) {
             ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.READ_CONTACTS), 3)
@@ -44,6 +45,14 @@ class HomeActivity : BaseActivity() {
         btn_fragment.setOnClickListener { GoActivity(FragmentActivity::class.java,false) }
         //自定义钟表View
         btn_clock.setOnClickListener { startActivity<DiyView>()}
+        //弹窗测试
+        btn_dialog.setOnClickListener { startActivity<DialogActivity>()}
+        //RecycleView 失败
+        btn_recycle_view.setOnClickListener { startActivity<RecycleActivity>()}
+        btn_login.setOnClickListener { startActivity<LoginActivity>()}
+        btn_my_login.setOnClickListener { startActivity<MyLoginActivity>()}
+        //坐标轴
+        btn_xy.setOnClickListener { startActivity<XYzhouActivity>()}
 
 
 
@@ -56,11 +65,15 @@ class HomeActivity : BaseActivity() {
         super.onNewIntent(intent)
         Log.d(TAG, "onNewIntent: 进来了么2")
         setIntent(intent)
-
         val aaa = intent.getBooleanExtra("aaa", false)
         Log.d(TAG, "onNewIntent: $aaa")
         toast(""+aaa)
 
 
     }
+
+
+
+
+
 }

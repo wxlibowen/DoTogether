@@ -11,7 +11,7 @@ import com.example.administrator.testone.base.MyApplication;
  * 工具合集
  */
 public class Util {
-    private static Context context;
+    private static Context context=MyApplication.getContext();
     private static String spName = "testOneSP";
 
     private static void getContext() {

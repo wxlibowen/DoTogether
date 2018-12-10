@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.administrator.testone">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -52,7 +53,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TestActivity" />
+        <activity
+            android:name=".activity.TestActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
 
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
@@ -127,7 +130,11 @@
             android:name=".activity.FragmentActivity"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity android:name=".activity.DiyView"></activity>
+        <activity android:name=".activity.DiyView" />
+        <activity android:name=".activity.DialogActivity" />
+        <activity android:name=".activity.RecycleActivity" />
+        <activity android:name=".activity.MyLoginActivity" />
+        <activity android:name=".activity.XYzhouActivity"></activity>
     </application>
 
 </manifest>

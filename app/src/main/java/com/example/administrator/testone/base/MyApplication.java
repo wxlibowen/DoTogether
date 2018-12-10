@@ -12,17 +12,18 @@ import io.rong.imkit.RongIM;
 
 public class MyApplication extends MultiDexApplication {
     private static Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
         //热更新请求
         SophixManager.getInstance().queryAndLoadNewPatch();
-        Log.d("日志", "初始化融云");
         RongIM.init(this);//初始化融云
-        context=this;
+        context = this;
 
     }
-    public static Context getContext(){
+
+    public static Context getContext() {
         return context;
     }
 

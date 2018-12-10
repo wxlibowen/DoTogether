@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,7 +51,6 @@
                     android:background="@drawable/bg_button_orange"
                     android:text="闪屏页"/>
                 <Button
-
                     android:layout_marginLeft="20dp"
                     android:id="@+id/btn_multiple"
                     android:layout_width="0dp"
@@ -83,6 +81,75 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button_orange"
                     android:text="自定义表" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_dialog"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="弹窗"/>
+                <Button
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/btn_recycle_view"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="横向列表猫眼电影" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="登录页面"/>
+                <Button
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/btn_my_login"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="我的登录" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_xy"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="坐标轴"/>
+                <Button
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/btn_"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_orange"
+                    android:text="" />
             </LinearLayout>
 
         </LinearLayout>
