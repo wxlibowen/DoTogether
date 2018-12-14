@@ -144,12 +144,12 @@
                     android:text="坐标轴"/>
                 <Button
                     android:layout_marginLeft="20dp"
-                    android:id="@+id/btn_"
+                    android:id="@+id/btn_dianzan"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button_orange"
-                    android:text="" />
+                    android:text="点赞" />
             </LinearLayout>
 
         </LinearLayout>

@@ -8,6 +8,9 @@ import com.example.administrator.testone.R;
 import com.example.administrator.testone.base.BaseActivity;
 import com.example.administrator.testone.view.Clock;
 
+/**
+ * @author WXlib
+ */
 public class DiyView extends BaseActivity {
     private Clock clock;
     private Handler handler=new Handler();

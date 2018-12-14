@@ -45,7 +45,7 @@
             android:required="true" />
 
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".HomeActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -134,7 +134,8 @@
         <activity android:name=".activity.DialogActivity" />
         <activity android:name=".activity.RecycleActivity" />
         <activity android:name=".activity.MyLoginActivity" />
-        <activity android:name=".activity.XYzhouActivity"></activity>
+        <activity android:name=".activity.XYzhouActivity" />
+        <activity android:name=".activity.DianZanActivity"></activity>
     </application>
 
 </manifest>

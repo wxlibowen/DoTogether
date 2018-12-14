@@ -1,11 +1,9 @@
 package com.example.administrator.testone.activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Build;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -13,8 +11,8 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.administrator.testone.HomeActivity;
 import com.example.administrator.testone.R;
 import com.example.administrator.testone.adapter.PhoneNumberAdapter;
 import com.example.administrator.testone.adapter.PhoneNumberRecycleViewAdapter;
@@ -27,13 +25,9 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
-import org.jetbrains.anko.ToastsKt;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import io.reactivex.internal.operators.observable.BlockingObservableNext;
 
 public class PhoneNumberActivity extends BaseActivity {
     private ListView lv_phone;

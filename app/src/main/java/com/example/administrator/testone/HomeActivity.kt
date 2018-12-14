@@ -1,4 +1,4 @@
-package com.example.administrator.testone.activity
+package com.example.administrator.testone
 
 import android.Manifest
 import android.content.Intent
@@ -7,10 +7,11 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
-import com.example.administrator.testone.R
+import com.example.administrator.testone.activity.*
 import com.example.administrator.testone.base.BaseActivity
 import com.example.firstlabrary.LoginActivity
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -19,7 +20,7 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        startActivity<XYzhouActivity>()
+        startActivity<DianZanActivity>()
         jump()
         if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this@HomeActivity, Manifest.permission.READ_CONTACTS)) {
             ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.READ_CONTACTS), 3)
@@ -53,6 +54,8 @@ class HomeActivity : BaseActivity() {
         btn_my_login.setOnClickListener { startActivity<MyLoginActivity>()}
         //坐标轴
         btn_xy.setOnClickListener { startActivity<XYzhouActivity>()}
+        //点赞
+        btn_dian.setOnClickListener { startActivity<DianZanActivity>()}
 
 
 
