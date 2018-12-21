@@ -150,9 +150,6 @@ public class Clock extends View {
             viewWidth = MeasureSpec.getSize(heightMeasureSpec);
         } else {
             viewWidth = MeasureSpec.getSize(widthMeasureSpec);
-
         }
-
-
     }
 }

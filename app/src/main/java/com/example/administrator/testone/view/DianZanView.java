@@ -23,7 +23,6 @@ public class DianZanView extends View {
     private float lineLongStart = 1f;
     private float lineLongEnd = 0f;
     private Handler handler = new Handler();
-
     private Runnable runnableStart = new Runnable() {
         @Override
         public void run() {
@@ -66,9 +65,12 @@ public class DianZanView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+//        height=getHeight()*0.98f;
+//        width=getWidth();
+
         Paint paint = new Paint();
         paint.setColor(getResources().getColor(R.color.yellow_zan));
-        paint.setStrokeWidth(20);
+        paint.setStrokeWidth(width/60);
         float startY = height - height / 7 * lineLongEnd;
         float stopY = height - height / 7 * lineLongStart;
         canvas.drawLine(width / 2, startY, width / 2, stopY, paint);
@@ -95,6 +97,8 @@ public class DianZanView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         height = MeasureSpec.getSize(heightMeasureSpec) * 0.98f;
         width = MeasureSpec.getSize(widthMeasureSpec);
+
+
     }
 
     public void startAnimator() {

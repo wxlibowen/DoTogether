@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/colorGray"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.HongFundActivity">
+    <RelativeLayout
+        android:id="@+id/diyizu"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/xiaobo"
+            android:adjustViewBounds="true"
+            />
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_alignParentEnd="true"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bowen"
+            android:adjustViewBounds="true"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/dierzu"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tangyue"
+            android:adjustViewBounds="true"
+            />
+        <ImageView
+            android:id="@+id/image4"
+            android:layout_alignParentEnd="true"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chenbin"
+            android:adjustViewBounds="true"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/disanzu"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image5"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shangzhi"
+            android:adjustViewBounds="true"
+            />
+        <ImageView
+            android:id="@+id/image6"
+            android:layout_alignParentEnd="true"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mingxing"
+            android:adjustViewBounds="true"
+            />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/mDaLuanBTN"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="红枫财务代表队随机匹配系统"
+        />
+
+
+</LinearLayout>

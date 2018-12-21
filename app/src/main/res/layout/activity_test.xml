@@ -96,6 +96,9 @@
                     android:layout_height="wrap_content"
                     android:hint="请输入密码" />
             </android.support.design.widget.TextInputLayout>
+            <include layout="@layout/activity_dianzan"
+                />
+
         </LinearLayout>
 
 

@@ -31,7 +31,7 @@
     <application
         android:name=".base.SophixStubApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/log_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -135,7 +135,8 @@
         <activity android:name=".activity.RecycleActivity" />
         <activity android:name=".activity.MyLoginActivity" />
         <activity android:name=".activity.XYzhouActivity" />
-        <activity android:name=".activity.DianZanActivity"></activity>
+        <activity android:name=".activity.DianZanActivity" />
+        <activity android:name=".activity.HongFundActivity"></activity>
     </application>
 
 </manifest>

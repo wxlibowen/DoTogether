@@ -36,13 +36,26 @@ public class Util {
     }
 
     public static void putString(String key, String value) {
+        getContext();
         SharedPreferences sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE);
         sp.edit().putString(key, value).commit();
     }
 
     public static String getString(String key) {
+        getContext();
         SharedPreferences sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE);
         return sp.getString(key, "");
+    }
+    public static Object getObject(String key,Object msg){
+        SharedPreferences sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE);
+        String type=msg.getClass().getSimpleName();
+        if (type.equals("Boolean")){
+            return sp.getBoolean(key,(Boolean) msg);
+        }else if (type.equals("Integer")){
+            return sp.getInt(key,(int) msg);
+        }else {
+            return sp.getString(key,"");
+        }
     }
 
 
