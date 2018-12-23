@@ -65,7 +65,7 @@
             android:id="@+id/image5"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/shangzhi"
+            android:src="@drawable/taishanyading"
             android:adjustViewBounds="true"
             />
         <ImageView
