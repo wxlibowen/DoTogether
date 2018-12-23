@@ -29,7 +29,7 @@ class HongFundActivity : BaseActivity() {
 
 
 
-        mList.add(R.drawable.xiaobo)
+        mList.add(R.drawable.xiaobo_change)
         mList.add(R.drawable.bowen)
         mList.add(R.drawable.taishanyading)
         mList.add(R.drawable.tangyue)

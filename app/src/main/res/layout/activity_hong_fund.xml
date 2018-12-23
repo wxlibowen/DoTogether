@@ -19,7 +19,7 @@
             android:id="@+id/image1"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/xiaobo"
+            android:src="@drawable/xiaobo_change"
             android:adjustViewBounds="true"
             />
         <ImageView
