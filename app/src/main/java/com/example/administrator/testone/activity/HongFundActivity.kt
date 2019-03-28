@@ -12,6 +12,9 @@ import org.jetbrains.anko.backgroundColor
 import org.jetbrains.anko.image
 import java.util.*
 
+/**
+ * 红枫组队系统
+ */
 class HongFundActivity : BaseActivity() {
     private var i = 0
     private val mList = ArrayList<Int>()

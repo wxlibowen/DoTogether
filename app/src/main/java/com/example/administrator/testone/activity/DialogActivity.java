@@ -2,10 +2,15 @@ package com.example.administrator.testone.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
+
 import com.example.administrator.testone.R;
 import com.example.administrator.testone.widget.MyDialogActivity;
+
+import java.util.List;
 
 public class DialogActivity extends AppCompatActivity {
     private Button btn_1;
@@ -21,8 +26,12 @@ public class DialogActivity extends AppCompatActivity {
                 mDialog = new MyDialogActivity(DialogActivity.this,0,success,cancel);
                 mDialog.setCancelable(false);
                 mDialog.show();
+
+
+
             }
         });
+
 
 
 
@@ -40,4 +49,7 @@ public class DialogActivity extends AppCompatActivity {
            mDialog.cancel();
         }
     };
+
+
+
 }

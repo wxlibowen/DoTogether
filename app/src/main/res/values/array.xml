@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="CarouselImage">
+        <item>@drawable/guide_img_one</item>
+        <item>@drawable/guide_img_two</item>
+        <item>@drawable/guide_img_three</item>
+    </array>
+</resources>
